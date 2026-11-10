@@ -1,0 +1,346 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Fogón Criollo: restaurante de cocina colombiana tradicional. Consulta el menú, el horario y reserva tu mesa en línea.">
+  <title>Fogón Criollo | Cocina colombiana tradicional</title>
+  <link rel="icon" href="img/logo.svg" type="image/svg+xml">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=Poppins:wght@400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+
+  <!-- ===== ENCABEZADO Y MENÚ DE NAVEGACIÓN ===== -->
+  <header class="header" id="header">
+    <div class="container header__inner">
+      <a href="#inicio" class="logo" aria-label="Fogón Criollo, ir al inicio">
+        <img src="img/logo.svg" alt="" class="logo__img" width="44" height="44">
+        <span class="logo__text">Fogón <strong>Criollo</strong></span>
+      </a>
+
+      <button class="nav-toggle" id="navToggle" aria-label="Abrir menú" aria-expanded="false" aria-controls="mainNav">
+        <span class="nav-toggle__bar"></span>
+        <span class="nav-toggle__bar"></span>
+        <span class="nav-toggle__bar"></span>
+      </button>
+
+      <nav class="nav" id="mainNav" aria-label="Navegación principal">
+        <ul class="nav__list">
+          <li><a href="#inicio" class="nav__link is-active">Inicio</a></li>
+          <li><a href="#nosotros" class="nav__link">Nosotros</a></li>
+          <li><a href="#menu" class="nav__link">Menú</a></li>
+          <li><a href="#galeria" class="nav__link">Galería</a></li>
+          <li><a href="#reservas" class="nav__link">Reservas</a></li>
+          <li><a href="#contacto" class="nav__link">Contacto</a></li>
+        </ul>
+        <a href="#reservas" class="btn btn--primary nav__cta">Reservar mesa</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <!-- ===== HERO / PORTADA ===== -->
+    <section class="hero" id="inicio">
+      <div class="container hero__inner">
+        <div class="hero__content">
+          <p class="hero__tag">Cocina colombiana · Desde 2012</p>
+          <h1 class="hero__title">El sabor de la casa, servido a fuego lento</h1>
+          <p class="hero__text">Recetas de la abuela con ingredientes frescos del Valle del Cauca. Ven a compartir una mesa llena de tradición.</p>
+          <div class="hero__actions">
+            <a href="#menu" class="btn btn--primary">Ver el menú</a>
+            <a href="#reservas" class="btn btn--outline">Reservar mesa</a>
+          </div>
+          <ul class="hero__stats">
+            <li><strong>4.8</strong><span>Calificación</span></li>
+            <li><strong>+30</strong><span>Platos</span></li>
+            <li><strong>12</strong><span>Años</span></li>
+          </ul>
+        </div>
+        <figure class="hero__media">
+          <img src="img/hero.svg" alt="Mesa servida con bandeja típica, arepas y jugo natural" width="560" height="480">
+        </figure>
+      </div>
+    </section>
+
+    <!-- ===== NOSOTROS ===== -->
+    <section class="section about" id="nosotros">
+      <div class="container about__inner">
+        <figure class="about__media">
+          <img src="img/chef.svg" alt="Ilustración de la chef principal frente al fogón" width="480" height="480" loading="lazy">
+        </figure>
+        <div class="about__content">
+          <p class="section__tag">Nuestra historia</p>
+          <h2 class="section__title">Una cocina que nació en familia</h2>
+          <p>Fogón Criollo empezó como una pequeña cocina de barrio. Hoy seguimos cocinando igual: con leña, paciencia y productos de campesinos de la región.</p>
+          <ul class="features">
+            <li class="feature">
+              <span class="feature__icon" aria-hidden="true">🔥</span>
+              <div><h3>Cocina de leña</h3><p>Sancochos y asados cocidos lentamente.</p></div>
+            </li>
+            <li class="feature">
+              <span class="feature__icon" aria-hidden="true">🌽</span>
+              <div><h3>Producto local</h3><p>Maíz, plátano y frutas de la región.</p></div>
+            </li>
+            <li class="feature">
+              <span class="feature__icon" aria-hidden="true">👨‍👩‍👧</span>
+              <div><h3>Ambiente familiar</h3><p>Espacio para niños y grupos grandes.</p></div>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== MENÚ (filtrable) ===== -->
+    <section class="section menu" id="menu">
+      <div class="container">
+        <header class="section__header">
+          <p class="section__tag">Nuestra carta</p>
+          <h2 class="section__title">Menú del día</h2>
+          <p class="section__lead">Filtra por categoría y toca una tarjeta para ver la descripción completa.</p>
+        </header>
+
+        <div class="filters" role="group" aria-label="Filtrar menú por categoría">
+          <button class="filter is-active" data-filter="todos" aria-pressed="true">Todos</button>
+          <button class="filter" data-filter="entradas" aria-pressed="false">Entradas</button>
+          <button class="filter" data-filter="fuertes" aria-pressed="false">Platos fuertes</button>
+          <button class="filter" data-filter="bebidas" aria-pressed="false">Bebidas</button>
+          <button class="filter" data-filter="postres" aria-pressed="false">Postres</button>
+        </div>
+
+        <div class="menu__grid" id="menuGrid">
+          <article class="card" data-category="entradas">
+            <img src="img/empanadas.svg" alt="Empanadas de maíz con ají" class="card__img" width="400" height="300" loading="lazy">
+            <div class="card__body">
+              <div class="card__head"><h3 class="card__title">Empanadas vallunas</h3><span class="card__price">$12.000</span></div>
+              <p class="card__desc">Seis empanadas de maíz rellenas de papa y carne, con ají de la casa.</p>
+              <button class="card__more" aria-expanded="false">Ver detalles</button>
+              <p class="card__extra" hidden>Crocantes por fuera y suaves por dentro. Ideal para compartir. Opción vegetariana disponible.</p>
+            </div>
+          </article>
+
+          <article class="card" data-category="entradas">
+            <img src="img/arepas.svg" alt="Arepas con queso derretido" class="card__img" width="400" height="300" loading="lazy">
+            <div class="card__body">
+              <div class="card__head"><h3 class="card__title">Arepas con queso</h3><span class="card__price">$9.500</span></div>
+              <p class="card__desc">Arepas asadas a la brasa con queso campesino y mantequilla.</p>
+              <button class="card__more" aria-expanded="false">Ver detalles</button>
+              <p class="card__extra" hidden>Hechas a mano cada mañana con maíz blanco pilado.</p>
+            </div>
+          </article>
+
+          <article class="card" data-category="fuertes">
+            <img src="img/bandeja.svg" alt="Bandeja con fríjoles, arroz, carne, huevo y aguacate" class="card__img" width="400" height="300" loading="lazy">
+            <div class="card__body">
+              <div class="card__head"><h3 class="card__title">Bandeja criolla</h3><span class="card__price">$32.000</span></div>
+              <p class="card__desc">Fríjoles, arroz, carne molida, chicharrón, huevo, maduro y aguacate.</p>
+              <button class="card__more" aria-expanded="false">Ver detalles</button>
+              <p class="card__extra" hidden>El plato más pedido de la casa. Porción generosa para buen apetito.</p>
+            </div>
+          </article>
+
+          <article class="card" data-category="fuertes">
+            <img src="img/sancocho.svg" alt="Plato hondo de sancocho de gallina" class="card__img" width="400" height="300" loading="lazy">
+            <div class="card__body">
+              <div class="card__head"><h3 class="card__title">Sancocho de gallina</h3><span class="card__price">$28.000</span></div>
+              <p class="card__desc">Cocinado en leña con yuca, plátano, mazorca y cilantro. Incluye arroz.</p>
+              <button class="card__more" aria-expanded="false">Ver detalles</button>
+              <p class="card__extra" hidden>Disponible sábados, domingos y festivos desde las 11:00 a. m.</p>
+            </div>
+          </article>
+
+          <article class="card" data-category="fuertes">
+            <img src="img/pescado.svg" alt="Pescado frito con patacones y ensalada" class="card__img" width="400" height="300" loading="lazy">
+            <div class="card__body">
+              <div class="card__head"><h3 class="card__title">Mojarra frita</h3><span class="card__price">$35.000</span></div>
+              <p class="card__desc">Mojarra entera frita con patacón, arroz con coco y ensalada fresca.</p>
+              <button class="card__more" aria-expanded="false">Ver detalles</button>
+              <p class="card__extra" hidden>Receta del Pacífico. Pregunta por el tamaño disponible del día.</p>
+            </div>
+          </article>
+
+          <article class="card" data-category="bebidas">
+            <img src="img/lulada.svg" alt="Vaso de lulada con hielo" class="card__img" width="400" height="300" loading="lazy">
+            <div class="card__body">
+              <div class="card__head"><h3 class="card__title">Lulada</h3><span class="card__price">$7.000</span></div>
+              <p class="card__desc">Bebida típica caleña de lulo machacado, limón y hielo.</p>
+              <button class="card__more" aria-expanded="false">Ver detalles</button>
+              <p class="card__extra" hidden>Refrescante y con trocitos de fruta. Se puede pedir sin azúcar.</p>
+            </div>
+          </article>
+
+          <article class="card" data-category="bebidas">
+            <img src="img/limonada.svg" alt="Jarra de limonada de coco" class="card__img" width="400" height="300" loading="lazy">
+            <div class="card__body">
+              <div class="card__head"><h3 class="card__title">Limonada de coco</h3><span class="card__price">$8.500</span></div>
+              <p class="card__desc">Limón, leche de coco y hielo frappé. Cremosa y fresca.</p>
+              <button class="card__more" aria-expanded="false">Ver detalles</button>
+              <p class="card__extra" hidden>También disponible en jarra para 4 personas ($28.000).</p>
+            </div>
+          </article>
+
+          <article class="card" data-category="postres">
+            <img src="img/postre.svg" alt="Porción de postre de tres leches" class="card__img" width="400" height="300" loading="lazy">
+            <div class="card__body">
+              <div class="card__head"><h3 class="card__title">Tres leches</h3><span class="card__price">$9.000</span></div>
+              <p class="card__desc">Bizcocho húmedo bañado en tres leches con canela.</p>
+              <button class="card__more" aria-expanded="false">Ver detalles</button>
+              <p class="card__extra" hidden>Hecho en casa todos los días. Pregunta por el postre del día.</p>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== GALERÍA ===== -->
+    <section class="section gallery" id="galeria">
+      <div class="container">
+        <header class="section__header">
+          <p class="section__tag">Galería</p>
+          <h2 class="section__title">Así se vive el Fogón</h2>
+        </header>
+        <div class="gallery__grid">
+          <figure class="gallery__item gallery__item--big"><img src="img/salon.svg" alt="Salón principal del restaurante con mesas de madera" loading="lazy"><figcaption>Salón principal</figcaption></figure>
+          <figure class="gallery__item"><img src="img/bandeja.svg" alt="Bandeja criolla servida" loading="lazy"><figcaption>Bandeja criolla</figcaption></figure>
+          <figure class="gallery__item"><img src="img/lulada.svg" alt="Lulada recién preparada" loading="lazy"><figcaption>Lulada</figcaption></figure>
+          <figure class="gallery__item"><img src="img/sancocho.svg" alt="Sancocho de gallina" loading="lazy"><figcaption>Sancocho</figcaption></figure>
+          <figure class="gallery__item"><img src="img/postre.svg" alt="Tres leches" loading="lazy"><figcaption>Tres leches</figcaption></figure>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== RESERVAS (formulario) ===== -->
+    <section class="section reservas" id="reservas">
+      <div class="container reservas__inner">
+        <div class="reservas__info">
+          <p class="section__tag section__tag--light">Reservas</p>
+          <h2 class="section__title">Aparta tu mesa</h2>
+          <p>Completa el formulario y te confirmaremos la reserva por correo. Para grupos de más de 10 personas, llámanos.</p>
+          <ul class="schedule">
+            <li><span>Lunes a jueves</span><span>11:00 – 21:00</span></li>
+            <li><span>Viernes y sábado</span><span>11:00 – 23:00</span></li>
+            <li><span>Domingo y festivos</span><span>10:00 – 18:00</span></li>
+          </ul>
+        </div>
+
+        <form class="form" id="reservaForm" novalidate>
+          <div class="form__row">
+            <div class="form__group">
+              <label for="nombre">Nombre completo</label>
+              <input type="text" id="nombre" name="nombre" placeholder="Ej. Ana Gómez" required minlength="3" autocomplete="name">
+              <small class="form__error" aria-live="polite"></small>
+            </div>
+            <div class="form__group">
+              <label for="correo">Correo electrónico</label>
+              <input type="email" id="correo" name="correo" placeholder="tucorreo@ejemplo.com" required autocomplete="email">
+              <small class="form__error" aria-live="polite"></small>
+            </div>
+          </div>
+          <div class="form__row form__row--3">
+            <div class="form__group">
+              <label for="fecha">Fecha</label>
+              <input type="date" id="fecha" name="fecha" required>
+              <small class="form__error" aria-live="polite"></small>
+            </div>
+            <div class="form__group">
+              <label for="hora">Hora</label>
+              <select id="hora" name="hora" required>
+                <option value="">Selecciona</option>
+                <option>12:00</option><option>13:00</option><option>14:00</option>
+                <option>18:00</option><option>19:00</option><option>20:00</option>
+              </select>
+              <small class="form__error" aria-live="polite"></small>
+            </div>
+            <div class="form__group">
+              <label for="personas">Personas</label>
+              <input type="number" id="personas" name="personas" min="1" max="10" value="2" required>
+              <small class="form__error" aria-live="polite"></small>
+            </div>
+          </div>
+          <div class="form__group">
+            <label for="nota">Comentarios (opcional)</label>
+            <textarea id="nota" name="nota" rows="3" placeholder="Cumpleaños, silla para bebé, alergias..."></textarea>
+          </div>
+          <button type="submit" class="btn btn--primary btn--block">Confirmar reserva</button>
+          <p class="form__success" id="formSuccess" role="status" hidden></p>
+        </form>
+      </div>
+    </section>
+
+    <!-- ===== PREGUNTAS FRECUENTES (desplegable) ===== -->
+    <section class="section faq" id="faq">
+      <div class="container faq__inner">
+        <header class="section__header">
+          <p class="section__tag">Preguntas frecuentes</p>
+          <h2 class="section__title">¿Tienes dudas?</h2>
+        </header>
+        <div class="faq__list">
+          <details class="faq__item">
+            <summary>¿Tienen opciones vegetarianas?</summary>
+            <p>Sí. Las empanadas, las arepas y varios acompañamientos tienen versión vegetariana. Pregunta al mesero.</p>
+          </details>
+          <details class="faq__item">
+            <summary>¿Hacen domicilios?</summary>
+            <p>Sí, a toda la ciudad de 11:00 a. m. a 9:00 p. m. Escríbenos por WhatsApp para hacer tu pedido.</p>
+          </details>
+          <details class="faq__item">
+            <summary>¿Tienen parqueadero?</summary>
+            <p>Contamos con parqueadero gratuito para clientes con capacidad para 20 carros y motos.</p>
+          </details>
+          <details class="faq__item">
+            <summary>¿Se puede celebrar un cumpleaños?</summary>
+            <p>Claro. Indícalo en el formulario de reserva y te preparamos una sorpresa con el postre.</p>
+          </details>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== CONTACTO ===== -->
+    <section class="section contact" id="contacto">
+      <div class="container contact__grid">
+        <article class="contact__card">
+          <span class="contact__icon" aria-hidden="true">📍</span>
+          <h3>Dirección</h3>
+          <p>Calle 5 # 8-24, Centro<br>Valle del Cauca, Colombia</p>
+        </article>
+        <article class="contact__card">
+          <span class="contact__icon" aria-hidden="true">📞</span>
+          <h3>Teléfono</h3>
+          <p><a href="tel:+576020000000">(602) 000 0000</a></p>
+        </article>
+        <article class="contact__card">
+          <span class="contact__icon" aria-hidden="true">✉️</span>
+          <h3>Correo</h3>
+          <p><a href="mailto:reservas@fogoncriollo.co">reservas@fogoncriollo.co</a></p>
+        </article>
+      </div>
+    </section>
+  </main>
+
+  <!-- ===== PIE DE PÁGINA ===== -->
+  <footer class="footer">
+    <div class="container footer__inner">
+      <div class="footer__brand">
+        <a href="#inicio" class="logo logo--light">
+          <img src="img/logo.svg" alt="" class="logo__img" width="40" height="40">
+          <span class="logo__text">Fogón <strong>Criollo</strong></span>
+        </a>
+        <p>Cocina colombiana tradicional hecha con cariño.</p>
+      </div>
+      <nav class="footer__nav" aria-label="Enlaces del pie de página">
+        <a href="#menu">Menú</a>
+        <a href="#reservas">Reservas</a>
+        <a href="#faq">Preguntas</a>
+        <a href="#contacto">Contacto</a>
+      </nav>
+      <p class="footer__copy">© <span id="year">2026</span> Fogón Criollo. Proyecto académico – Guía 4: Interfaz web responsiva.</p>
+    </div>
+  </footer>
+
+  <button class="to-top" id="toTop" aria-label="Volver arriba" hidden>↑</button>
+
+  <script src="js/main.js"></script>
+</body>
+</html>
