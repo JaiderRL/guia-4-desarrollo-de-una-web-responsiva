@@ -15,7 +15,7 @@ index.html        Estructura principal de la página
 css/styles.css    Estilos (Mobile First + Media Queries a 600, 900 y 1200 px)
 js/main.js        Menú adaptable, filtro del menú, tarjetas desplegables, validación del formulario
 img/              Ilustraciones SVG originales
-docs/             Documentación PDF, video de validación y capturas
+docs/             Documentación PDF y capturas
 ```
 
 ## Interacción
@@ -29,5 +29,4 @@ docs/             Documentación PDF, video de validación y capturas
 ## Entregables
 
 - `docs/Documentacion.pdf`: documentación del desarrollo
-- `docs/video-validacion.mp4`: video de validación en computador, tableta y teléfono
 - `docs/capturas/`: evidencias en los tres tamaños
